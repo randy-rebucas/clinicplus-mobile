@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://hidden-cove-43718.herokuapp.com/api'
 };

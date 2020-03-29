@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Authentication</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Authentication</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+      <ion-button fill="outline" shape="round" expand="block">Scan QR Code</ion-button>
+      <ion-button color="primary" shape="round" expand="block" (click)="onLoginOpen()">Login</ion-button>
+  </div>
+</ion-content>

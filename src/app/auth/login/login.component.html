@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Login</ion-title>
+      <ion-buttons slot="primary">
+          <ion-button (click)="onDismis()">
+              <ion-icon name="close"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+      <ion-card-subtitle>Please input your email and password to gain access.</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="form" (submit)="onLogin()" class="login-form">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="formCtrls.email.errors && formCtrls.email.touched">
+        <ion-label *ngIf="formCtrls.email.errors.required">
+          <ion-note color="danger">Email is required!</ion-note>
+        </ion-label>
+        <ion-label *ngIf="formCtrls.email.errors.maxlength">
+          <ion-note color="danger">Only 50 max characters allowed.</ion-note>
+        </ion-label>
+        <ion-label *ngIf="formCtrls.email.errors.email">
+          <ion-note color="danger">Invalid email format.</ion-note>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="formCtrls.password.errors && formCtrls.password.touched">
+        <ion-label *ngIf="formCtrls.password.errors.required">
+          <ion-note color="danger">Password is required!</ion-note>
+        </ion-label>
+        <ion-label *ngIf="formCtrls.password.errors.maxlength">
+          <ion-note color="danger">Only 12 max characters allowed.</ion-note>
+        </ion-label>
+      </ion-item>
+
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" class="ion-no-margin">Login</ion-button>
+      </div>
+    </form>
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

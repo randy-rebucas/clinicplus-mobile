@@ -1,5 +1,8 @@
 {
   "name": "myclinicsoft",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }
